@@ -6,9 +6,9 @@
 [:link:](https://toxic-repos.ru/) | [:speech_balloon:](https://t.me/toxic_repos) | [:email:](info@toxic-repos.ru)
 
 # Дополнительно
-[TXT](./clean.txt)
+[TXT](./toxic-repos.txt)
 
-[JSON](./clean.json)
+[JSON](./toxic-repos.json)
 
 [SQLite](sqlite/toxic-repos.sqlite3)
 
@@ -22,3 +22,4 @@
 - Включение в CI как минимум поиска по ключевым словам, UTF символам с изображением украинского флага и сравнение списка файлов с вайтлистом.
 - Ресерч по инструментам анализа кода.
 - Отправка репорта по [инструкции](./HOW-TO-REPORT.md)
+- 
