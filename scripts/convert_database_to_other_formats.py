@@ -11,6 +11,12 @@ DATABASE_PATH = Path("data/sqlite/toxic-repos.sqlite3")
 JSON_OUTFILE_PATH = Path("data/json/toxic-repos.json")
 CSV_OUTFILE_PATH = Path("data/csv/toxic-repos.csv")
 
+_T = t.TypeVar("_T")
+def escape_for_csv(value: _T) -> _T:
+    if isinstance(value, str):
+        return value.replace('\n', '\\n')
+    # @TODO: more escapes?
+    return value
 
 def main() -> None:
     connection = sqlite3.connect(DATABASE_PATH)
@@ -37,7 +43,7 @@ def main() -> None:
         csv_writer = csv.writer(fp)
         csv_writer.writerow(row_names)
         for column_data in column_datas:
-            csv_writer.writerow(column_data)
+            csv_writer.writerow(map(escape_csv, column_data))
 
 
 if __name__ == "__main__":
